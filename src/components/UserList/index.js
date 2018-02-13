@@ -11,13 +11,16 @@ type Props = { list: Array<Object> };
 const UserList = ({ list }: Props) => (
   <div className={styles.UserList}>
     <h4>User List</h4>
-    <ul>
-      {list.map(user => (
-        <li key={user.id}>
-          <Link to={`/UserInfo/${user.id}`}>{user.name}</Link>
-        </li>
-      ))}
-    </ul>
+    <div className={styles.container}>
+      <ul>
+        {list.map(user => (
+          <li key={user.id}>
+            <Link to={`/UserInfo/${user.id}`}>{user.name}</Link>
+          </li>
+        ))}
+      </ul>
+      <div className={styles.detail}>Put user detail here</div>
+    </div>
   </div>
 );
 
